@@ -1,0 +1,16 @@
+.todo-container {
+    margin-left: 100px;
+}
+
+.todos-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logout-button {
+    width: 60px;
+    height: 30px;
+    margin-right: 100px;
+    margin-top: 20px;
+}
