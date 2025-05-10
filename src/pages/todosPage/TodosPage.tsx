@@ -52,10 +52,6 @@ const TodosPage = () => {
         navigate("/");
     }
 
-    if (!isAuthReady) {
-        return <Loader />;
-    }
-
     return (
         <div className={classes.todos_page}>
             <div className={classes.todo_container}>
