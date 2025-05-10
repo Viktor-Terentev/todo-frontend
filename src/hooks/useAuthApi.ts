@@ -12,6 +12,7 @@ export const useAuthApi = () => {
     const { accessToken, setAccessToken } = useAuth();
     const api = createAxiosInstance(accessToken ?? undefined);
 
+
     const login = async (data: { username: string; password: string }) => {
         const token = await loginUser(api, data);
         setAccessToken(token);

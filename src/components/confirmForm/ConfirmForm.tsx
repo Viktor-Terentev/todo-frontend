@@ -1,6 +1,7 @@
 import * as React from "react";
 import {useLocation, useNavigate} from "react-router-dom";
 import {useAuthApi} from "../../hooks/useAuthApi.ts";
+import classes from "./ConfirmForm.module.scss";
 
 
 const ConfirmForm = () => {
@@ -32,15 +33,16 @@ const ConfirmForm = () => {
     }
 
     return (
-        <div>
+        <div className={classes.confirm_form}>
             <h2>Подтверждение почты</h2>
             <input
+                className={classes.input}
                 type="text"
                 placeholder="Код подтверждения"
                 value={code}
                 onChange={(e) => setCode(e.target.value)}
             />
-            <button onClick={handleConfirm}>Подтвердить</button>
+            <button className={classes.button} onClick={handleConfirm}>Подтвердить</button>
         </div>
     )
 }
