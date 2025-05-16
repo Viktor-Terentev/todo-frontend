@@ -8,10 +8,10 @@ export const useTodoApi = () => {
     const dispatch = useDispatch();
     const { accessToken } = useAuth();
 
-    const apiRef = useRef(createAxiosInstance(accessToken ?? undefined));
+    const apiRef = useRef(createAxiosInstance());
 
     useEffect(() => {
-        apiRef.current = createAxiosInstance(accessToken ?? undefined);
+        apiRef.current = createAxiosInstance();
     }, [accessToken]);
 
     const fetchTodos = async () => {

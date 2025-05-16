@@ -8,9 +8,15 @@ import {
     refreshToken,
 } from "../api/authApi";
 
+type RegisterData = {
+    username: string;
+    email: string;
+    password: string;
+}
+
 export const useAuthApi = () => {
-    const { accessToken, setAccessToken } = useAuth();
-    const api = createAxiosInstance(accessToken ?? undefined);
+    const { setAccessToken } = useAuth();
+    const api = createAxiosInstance();
 
 
     const login = async (data: { username: string; password: string }) => {
@@ -29,8 +35,8 @@ export const useAuthApi = () => {
     };
 
     return {
-        register: (data) => registerUser(api, data),
-        confirm: (u, c) => confirmCode(api, u, c),
+        register: (data: RegisterData) => registerUser(api, data),
+        confirm: (u: string, c: string) => confirmCode(api, u, c),
         login,
         logout,
         refresh,
